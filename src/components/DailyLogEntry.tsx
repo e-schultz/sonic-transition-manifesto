@@ -62,8 +62,8 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Header Section */}
       <Card className="bg-gradient-to-r from-purple-900/50 to-cyan-900/50 border-purple-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-2xl text-white">Daily Chronicle</CardTitle>
-          <div className="flex items-center gap-4 text-sm text-gray-200">
+          <CardTitle className="text-2xl text-accessible-high">Daily Chronicle</CardTitle>
+          <div className="flex items-center gap-4 text-sm text-accessible-medium">
             <div className="flex items-center gap-1">
               <Calendar className="w-4 h-4" aria-hidden="true" />
               <span>{log.date.split('T')[0]}</span>
@@ -83,7 +83,7 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Timeline */}
       <Card className="bg-black/40 border-cyan-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-white flex items-center gap-2">
+          <CardTitle className="text-xl text-accessible-high flex items-center gap-2">
             <Clock className="w-5 h-5" aria-hidden="true" />
             Timeline
           </CardTitle>
@@ -95,17 +95,17 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
                 <div className="absolute left-6 top-12 w-0.5 h-16 bg-gradient-to-b from-purple-500 to-cyan-500" aria-hidden="true"></div>
               )}
               <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 flex items-center justify-center text-sm font-mono text-white" role="img" aria-label={`Event at ${entry.time}`}>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 flex items-center justify-center text-sm font-mono text-accessible-high" role="img" aria-label={`Event at ${entry.time}`}>
                   {entry.time.split(':')[0]}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-white">{entry.event}</h3>
+                  <h3 className="text-lg font-semibold text-accessible-high">{entry.event}</h3>
                   {entry.mood && (
-                    <Badge variant="outline" className="border-cyan-400 text-cyan-300 mb-2">
+                    <Badge variant="outline" className="border-cyan-400 text-cyan-accessible mb-2">
                       {entry.mood}
                     </Badge>
                   )}
-                  <p className="text-gray-200 text-sm leading-relaxed">{entry.details}</p>
+                  <p className="text-accessible-medium text-sm leading-relaxed">{entry.details}</p>
                 </div>
               </div>
             </article>
@@ -116,7 +116,7 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Chat Links */}
       <Card className="bg-black/40 border-purple-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-white flex items-center gap-2">
+          <CardTitle className="text-xl text-accessible-high flex items-center gap-2">
             <ExternalLink className="w-5 h-5" aria-hidden="true" />
             Chat Links & Bridges
           </CardTitle>
@@ -127,21 +127,21 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
               <Button
                 key={index}
                 variant="outline"
-                className="justify-start border-gray-400 text-gray-200 hover:bg-white/15 hover:text-white hover:border-white h-auto p-4 interactive-element"
+                className="justify-start border-accessible-medium text-accessible-high hover:bg-white/15 hover:text-accessible-high hover:border-accessible-high h-auto p-4 interactive-element"
                 onClick={() => window.open(link.url, '_blank')}
                 aria-label={`Open ${link.title} in new tab`}
               >
                 <div className="text-left">
-                  <div className="font-medium text-gray-200">{link.title}</div>
-                  <div className="text-xs text-gray-400">{link.type} • claude.ai</div>
+                  <div className="font-medium text-accessible-high">{link.title}</div>
+                  <div className="text-xs text-accessible-medium">{link.type} • claude.ai</div>
                 </div>
               </Button>
             ))}
           </div>
           <Separator className="bg-white/10" />
-          <div className="text-sm text-gray-200">
-            <strong className="text-cyan-300">Bridges:</strong> bridge::restore CB-20250604-1244-JANE<br />
-            <strong className="text-cyan-300">Chroma updates:</strong> Successfully added 1 documents to [collection::jane_application_context]
+          <div className="text-sm text-accessible-medium">
+            <strong className="text-cyan-accessible">Bridges:</strong> bridge::restore CB-20250604-1244-JANE<br />
+            <strong className="text-cyan-accessible">Chroma updates:</strong> Successfully added 1 documents to [collection::jane_application_context]
           </div>
         </CardContent>
       </Card>
@@ -149,11 +149,11 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Reflection */}
       <Card className="bg-gradient-to-r from-red-900/30 to-orange-900/30 border-orange-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-orange-200">Reflection</CardTitle>
+          <CardTitle className="text-xl text-orange-accessible">Reflection</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-gray-200 leading-relaxed">
-            <strong className="text-orange-200">Mood:</strong> Sad - like, it sucks - but I will live. I am getting more stuff under my belt to demo, 
+          <p className="text-accessible-medium leading-relaxed">
+            <strong className="text-orange-accessible">Mood:</strong> Sad - like, it sucks - but I will live. I am getting more stuff under my belt to demo, 
             I really did my best going into it - and the process isn't over, other opportunities within Jane exist. 
             Going to go process for a bit, and then enjoy the afternoon.
           </p>

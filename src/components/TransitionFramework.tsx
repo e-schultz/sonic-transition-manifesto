@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -61,7 +60,7 @@ const TransitionFramework = () => {
       case "active": return "border-yellow-400/60 text-yellow-accessible";
       case "pending": return "border-blue-400/60 text-blue-accessible";
       case "future": return "border-purple-400/60 text-purple-accessible";
-      default: return "border-gray-400/60 text-accessible-medium";
+      default: return "border-accessible-medium text-accessible-medium";
     }
   };
 
@@ -111,7 +110,7 @@ const TransitionFramework = () => {
                     </Badge>
                   </div>
                   <p className="text-accessible-medium text-sm mb-1">{phase.description}</p>
-                  <p className="text-accessible-low text-xs">{phase.details}</p>
+                  <p className="text-accessible-medium text-xs">{phase.details}</p>
                 </div>
               </div>
             </div>

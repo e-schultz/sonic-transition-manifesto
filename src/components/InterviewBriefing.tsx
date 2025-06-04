@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -69,7 +68,7 @@ const InterviewBriefing = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="border-white/40 text-accessible-medium hover:bg-white/15 hover:text-accessible-high interactive-element"
+                className="border-accessible-medium text-accessible-medium hover:bg-white/15 hover:text-accessible-high interactive-element"
                 onClick={() => window.open(briefingData.github, '_blank')}
                 aria-label="Open GitHub portfolio in new tab"
               >
@@ -107,7 +106,7 @@ const InterviewBriefing = () => {
             <Zap className="w-5 h-5" aria-hidden="true" />
             Meta-System Development (Deferred)
           </CardTitle>
-          <p className="text-sm text-accessible-muted">
+          <p className="text-sm text-accessible-medium">
             Created but deferred until after Jane interview
           </p>
         </CardHeader>
