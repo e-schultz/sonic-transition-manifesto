@@ -62,19 +62,19 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Header Section */}
       <Card className="bg-gradient-to-r from-purple-900/50 to-cyan-900/50 border-purple-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-2xl text-purple-200">Daily Chronicle</CardTitle>
-          <div className="flex items-center gap-4 text-sm text-cyan-300">
+          <CardTitle className="text-2xl text-purple-accessible">Daily Chronicle</CardTitle>
+          <div className="flex items-center gap-4 text-sm text-cyan-accessible">
             <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              {log.date.split('T')[0]}
+              <Calendar className="w-4 h-4" aria-hidden="true" />
+              <span>{log.date.split('T')[0]}</span>
             </div>
             <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              {log.week}
+              <Clock className="w-4 h-4" aria-hidden="true" />
+              <span>{log.week}</span>
             </div>
             <div className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
-              {log.quarter}
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              <span>{log.quarter}</span>
             </div>
           </div>
         </CardHeader>
@@ -83,32 +83,32 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Timeline */}
       <Card className="bg-black/40 border-cyan-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-cyan-300 flex items-center gap-2">
-            <Clock className="w-5 h-5" />
+          <CardTitle className="text-xl text-cyan-accessible flex items-center gap-2">
+            <Clock className="w-5 h-5" aria-hidden="true" />
             Timeline
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           {timeline.map((entry, index) => (
-            <div key={index} className="relative">
+            <article key={index} className="relative">
               {index !== timeline.length - 1 && (
-                <div className="absolute left-6 top-12 w-0.5 h-16 bg-gradient-to-b from-purple-500 to-cyan-500"></div>
+                <div className="absolute left-6 top-12 w-0.5 h-16 bg-gradient-to-b from-purple-500 to-cyan-500" aria-hidden="true"></div>
               )}
               <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 flex items-center justify-center text-sm font-mono">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 flex items-center justify-center text-sm font-mono text-accessible-high" role="img" aria-label={`Event at ${entry.time}`}>
                   {entry.time.split(':')[0]}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-purple-200">{entry.event}</h3>
+                  <h3 className="text-lg font-semibold text-purple-accessible">{entry.event}</h3>
                   {entry.mood && (
-                    <Badge variant="outline" className="border-cyan-400/50 text-cyan-300 mb-2">
+                    <Badge variant="outline" className="border-cyan-400/60 text-cyan-accessible mb-2">
                       {entry.mood}
                     </Badge>
                   )}
-                  <p className="text-gray-300 text-sm leading-relaxed">{entry.details}</p>
+                  <p className="text-accessible-medium text-sm leading-relaxed">{entry.details}</p>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </CardContent>
       </Card>
@@ -116,8 +116,8 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Chat Links */}
       <Card className="bg-black/40 border-purple-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-purple-300 flex items-center gap-2">
-            <ExternalLink className="w-5 h-5" />
+          <CardTitle className="text-xl text-purple-accessible flex items-center gap-2">
+            <ExternalLink className="w-5 h-5" aria-hidden="true" />
             Chat Links & Bridges
           </CardTitle>
         </CardHeader>
@@ -127,18 +127,19 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
               <Button
                 key={index}
                 variant="outline"
-                className="justify-start border-white/20 text-white/80 hover:bg-white/10 h-auto p-4"
+                className="justify-start border-white/40 text-accessible-medium hover:bg-white/15 hover:text-accessible-high h-auto p-4 interactive-element"
                 onClick={() => window.open(link.url, '_blank')}
+                aria-label={`Open ${link.title} in new tab`}
               >
                 <div className="text-left">
-                  <div className="font-medium">{link.title}</div>
-                  <div className="text-xs text-gray-400">{link.type} • claude.ai</div>
+                  <div className="font-medium text-accessible-medium">{link.title}</div>
+                  <div className="text-xs text-accessible-muted">{link.type} • claude.ai</div>
                 </div>
               </Button>
             ))}
           </div>
           <Separator className="bg-white/10" />
-          <div className="text-sm text-cyan-300">
+          <div className="text-sm text-cyan-accessible">
             <strong>Bridges:</strong> bridge::restore CB-20250604-1244-JANE<br />
             <strong>Chroma updates:</strong> Successfully added 1 documents to [collection::jane_application_context]
           </div>
@@ -148,11 +149,11 @@ const DailyLogEntry = ({ log }: DailyLogEntryProps) => {
       {/* Reflection */}
       <Card className="bg-gradient-to-r from-red-900/30 to-orange-900/30 border-orange-500/30 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-orange-300">Reflection</CardTitle>
+          <CardTitle className="text-xl text-orange-accessible">Reflection</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-gray-300 leading-relaxed">
-            <strong>Mood:</strong> Sad - like, it sucks - but I will live. I am getting more stuff under my belt to demo, 
+          <p className="text-accessible-medium leading-relaxed">
+            <strong className="text-orange-accessible">Mood:</strong> Sad - like, it sucks - but I will live. I am getting more stuff under my belt to demo, 
             I really did my best going into it - and the process isn't over, other opportunities within Jane exist. 
             Going to go process for a bit, and then enjoy the afternoon.
           </p>

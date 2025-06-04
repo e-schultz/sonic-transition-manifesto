@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,20 +36,29 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* WCAG Compliant Accessibility Colors */
+    --text-high-contrast: 0 0% 95%;
+    --text-medium-contrast: 0 0% 85%;
+    --text-low-contrast: 0 0% 75%;
+    --text-muted: 0 0% 65%;
+    
+    --cyan-accessible: 180 100% 80%;
+    --purple-accessible: 270 50% 80%;
+    --green-accessible: 120 50% 75%;
+    --blue-accessible: 220 70% 80%;
+    --orange-accessible: 25 85% 75%;
+    --yellow-accessible: 50 100% 80%;
+    
+    --focus-ring: 220 100% 60%;
+    --interactive-hover: 0 0% 100%;
   }
 
   .dark {
@@ -87,6 +97,22 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* WCAG Compliant Dark Mode Colors */
+    --text-high-contrast: 0 0% 95%;
+    --text-medium-contrast: 0 0% 85%;
+    --text-low-contrast: 0 0% 75%;
+    --text-muted: 0 0% 65%;
+    
+    --cyan-accessible: 180 80% 75%;
+    --purple-accessible: 270 60% 80%;
+    --green-accessible: 120 60% 75%;
+    --blue-accessible: 220 70% 80%;
+    --orange-accessible: 25 90% 75%;
+    --yellow-accessible: 50 100% 80%;
+    
+    --focus-ring: 220 100% 70%;
+    --interactive-hover: 0 0% 100%;
   }
 }
 
@@ -97,5 +123,68 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Enhanced Focus Styles for Accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--focus-ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* High Contrast Text Utilities */
+  .text-accessible-high {
+    color: hsl(var(--text-high-contrast));
+  }
+  
+  .text-accessible-medium {
+    color: hsl(var(--text-medium-contrast));
+  }
+  
+  .text-accessible-low {
+    color: hsl(var(--text-low-contrast));
+  }
+  
+  .text-accessible-muted {
+    color: hsl(var(--text-muted));
+  }
+
+  /* Accessible Color Utilities */
+  .text-cyan-accessible {
+    color: hsl(var(--cyan-accessible));
+  }
+  
+  .text-purple-accessible {
+    color: hsl(var(--purple-accessible));
+  }
+  
+  .text-green-accessible {
+    color: hsl(var(--green-accessible));
+  }
+  
+  .text-blue-accessible {
+    color: hsl(var(--blue-accessible));
+  }
+  
+  .text-orange-accessible {
+    color: hsl(var(--orange-accessible));
+  }
+  
+  .text-yellow-accessible {
+    color: hsl(var(--yellow-accessible));
+  }
+
+  /* Interactive Element Enhancement */
+  .interactive-element {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .interactive-element:hover {
+    color: hsl(var(--interactive-hover));
+    transform: translateY(-1px);
+  }
+  
+  .interactive-element:focus-visible {
+    transform: translateY(-1px);
   }
 }
