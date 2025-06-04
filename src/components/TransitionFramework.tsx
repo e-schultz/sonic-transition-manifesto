@@ -74,10 +74,10 @@ const TransitionFramework = () => {
             <GitBranch className="w-6 h-6" />
             FLOAT Transition Framework
           </CardTitle>
-          <p className="text-blue-300/80">Systematic approach to navigating career and personal transitions</p>
+          <p className="text-blue-300/90">Systematic approach to navigating career and personal transitions</p>
         </CardHeader>
         <CardContent>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-200 leading-relaxed">
             The FLOAT methodology provides a structured approach to processing setbacks, 
             integrating learnings, and maintaining forward momentum during transition periods. 
             Current application: Jane Clinical Forms rejection → next opportunity preparation.
@@ -110,8 +110,8 @@ const TransitionFramework = () => {
                       {phase.status}
                     </Badge>
                   </div>
-                  <p className="text-gray-300 text-sm mb-1">{phase.description}</p>
-                  <p className="text-gray-400 text-xs">{phase.details}</p>
+                  <p className="text-gray-200 text-sm mb-1">{phase.description}</p>
+                  <p className="text-gray-300 text-xs">{phase.details}</p>
                 </div>
               </div>
             </div>
@@ -132,8 +132,8 @@ const TransitionFramework = () => {
             {floatMethodology.map((component, index) => (
               <div key={index} className="border border-white/10 rounded-lg p-4 bg-white/5">
                 <h4 className="font-semibold text-purple-200 mb-2">{component.component}</h4>
-                <p className="text-sm text-gray-300 mb-2">{component.description}</p>
-                <div className="text-xs text-cyan-400 bg-black/30 rounded p-2 font-mono">
+                <p className="text-sm text-gray-200 mb-2">{component.description}</p>
+                <div className="text-xs text-cyan-300 bg-black/30 rounded p-2 font-mono">
                   {component.implementation}
                 </div>
               </div>
@@ -143,27 +143,27 @@ const TransitionFramework = () => {
       </Card>
 
       {/* Current Application */}
-      <Card className="bg-gradient-to-r from-orange-900/30 to-red-900/30 border-orange-500/30 backdrop-blur-sm">
+      <Card className="bg-gradient-to-r from-orange-900/40 to-red-900/40 border-orange-500/40 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="text-xl text-orange-300">Current Transition Application</CardTitle>
+          <CardTitle className="text-xl text-orange-200">Current Transition Application</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
-            <h4 className="font-semibold text-orange-200 mb-2">Jane Clinical Forms Rejection</h4>
-            <p className="text-sm text-gray-300 mb-3">
+          <div className="bg-black/40 rounded-lg p-4 border border-orange-500/30">
+            <h4 className="font-semibold text-orange-100 mb-2">Jane Clinical Forms Rejection</h4>
+            <p className="text-sm text-gray-200 mb-3">
               "Cross-team collaboration" cited as differentiating factor. Multiple roles still open at Jane.
               Emotional processing: disappointed but not defeated.
             </p>
-            <div className="space-y-2 text-xs">
-              <div><strong>Learning:</strong> Cross-team collaboration emphasis for future interviews</div>
-              <div><strong>Opportunity:</strong> Additional Jane roles + broader market positioning</div>
-              <div><strong>Process:</strong> Professional resilience + continued momentum</div>
+            <div className="space-y-2 text-xs text-gray-200">
+              <div><strong className="text-orange-200">Learning:</strong> Cross-team collaboration emphasis for future interviews</div>
+              <div><strong className="text-orange-200">Opportunity:</strong> Additional Jane roles + broader market positioning</div>
+              <div><strong className="text-orange-200">Process:</strong> Professional resilience + continued momentum</div>
             </div>
           </div>
           
           <Button 
             variant="outline" 
-            className="border-orange-400/50 text-orange-300 hover:bg-orange-500/10"
+            className="border-orange-300/60 text-orange-200 hover:bg-orange-500/20 hover:border-orange-300/80 hover:text-orange-100"
           >
             Continue Processing & Planning
           </Button>
