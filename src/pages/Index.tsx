@@ -4,11 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, Brain, Music, Briefcase, GitBranch, Zap } from "lucide-react";
+import { Calendar, Brain, Music, Briefcase, GitBranch, Zap, Users } from "lucide-react";
 import DailyLogEntry from "@/components/DailyLogEntry";
 import InterviewBriefing from "@/components/InterviewBriefing";
 import SonicMetaphor from "@/components/SonicMetaphor";
 import TransitionFramework from "@/components/TransitionFramework";
+import References from "@/components/References";
 
 const Index = () => {
   const [activeView, setActiveView] = useState("log");
@@ -26,6 +27,7 @@ const Index = () => {
   const navigationItems = [
     { id: "log", label: "Daily Log", icon: Calendar, active: true },
     { id: "interview", label: "Interview Briefing", icon: Briefcase },
+    { id: "references", label: "References", icon: Users },
     { id: "sonic", label: "Sonic Metaphors", icon: Music },
     { id: "transition", label: "Transition Framework", icon: GitBranch }
   ];
@@ -99,6 +101,7 @@ const Index = () => {
           <div role="tabpanel" aria-labelledby={`${activeView}-tab`}>
             {activeView === "log" && <DailyLogEntry log={currentLog} />}
             {activeView === "interview" && <InterviewBriefing />}
+            {activeView === "references" && <References />}
             {activeView === "sonic" && <SonicMetaphor />}
             {activeView === "transition" && <TransitionFramework />}
           </div>
