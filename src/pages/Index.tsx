@@ -61,8 +61,8 @@ const Index = () => {
               onClick={() => setActiveView(item.id)}
               className={`flex items-center gap-2 transition-all duration-300 ${
                 activeView === item.id 
-                  ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg" 
-                  : "border-white/20 text-white/80 hover:bg-white/10"
+                  ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg border-transparent" 
+                  : "border-white/40 text-white bg-white/5 hover:bg-white/15 hover:border-white/60 hover:text-white"
               }`}
             >
               <item.icon className="w-4 h-4" />
