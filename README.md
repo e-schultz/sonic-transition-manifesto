@@ -29,7 +29,11 @@ accessibility: WCAG-2.1-AA
 
 # FLOAT.sys
 
+<img width="1490" alt="Screenshot 2025-06-15 at 8 08 54 PM" src="https://github.com/user-attachments/assets/927379c8-414f-4742-ad69-529cbef1329d" />
+
+
 > **Transition Tracking & Creative Process Management System**
+> 
 
 FLOAT.sys is a comprehensive web application designed for tracking personal and professional transitions, managing creative processes, and organizing reference materials. Built with React and modern web technologies, it provides an intuitive interface for logging daily activities, preparing for interviews, managing professional references, and exploring creative frameworks.
 
