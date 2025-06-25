@@ -35,7 +35,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-accessible-high">
       {/* Header with gradient overlay */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm border-b border-white/10">
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm border-b border-accessible-border">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 animate-pulse"></div>
         <div className="relative z-10 container mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
@@ -43,11 +43,11 @@ const Index = () => {
               <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 FLOAT.sys
               </h1>
-              <p className="text-cyan-accessible mt-2">Transition Tracking & Creative Process Management</p>
+              <p className="text-cyan-accessible mt-2 font-medium">Transition Tracking & Creative Process Management</p>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-mono text-purple-accessible">{currentLog.date.split('T')[0]}</div>
-              <div className="text-sm text-cyan-accessible">{currentLog.week} • {currentLog.quarter}</div>
+              <div className="text-2xl font-mono text-accessible-high font-bold">{currentLog.date.split('T')[0]}</div>
+              <div className="text-sm text-cyan-accessible font-medium">{currentLog.week} • {currentLog.quarter}</div>
             </div>
           </div>
         </div>
@@ -61,10 +61,10 @@ const Index = () => {
               key={item.id}
               variant={activeView === item.id ? "default" : "outline"}
               onClick={() => setActiveView(item.id)}
-              className={`flex items-center gap-2 transition-all duration-300 interactive-element ${
+              className={`flex items-center gap-2 transition-all duration-300 interactive-element font-medium ${
                 activeView === item.id 
                   ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-accessible-high shadow-lg border-transparent" 
-                  : "border-white/60 text-accessible-medium bg-white/10 hover:bg-white/20 hover:border-white/80 hover:text-accessible-high focus-visible:border-white/80 focus-visible:text-accessible-high"
+                  : "border-accessible-medium text-accessible-high bg-white/10 hover:bg-white/20 hover:border-accessible-border hover:text-accessible-high focus-visible:border-accessible-border focus-visible:text-accessible-high"
               }`}
               aria-label={`Switch to ${item.label} view`}
               role="tab"
@@ -77,18 +77,18 @@ const Index = () => {
         </div>
 
         {/* Status Bar */}
-        <Card className="mb-8 bg-black/40 border-purple-500/30 backdrop-blur-sm">
+        <Card className="mb-8 bg-black/50 border-accessible-border backdrop-blur-sm">
           <CardContent className="p-6">
             <div className="flex flex-wrap items-center gap-4 text-sm" role="status" aria-label="Current system status">
-              <Badge variant="outline" className="border-cyan-400/60 text-cyan-accessible">
+              <Badge variant="outline" className="border-cyan-400 text-cyan-accessible font-medium">
                 <Brain className="w-3 h-3 mr-1" aria-hidden="true" />
                 {currentLog.mood}
               </Badge>
-              <Badge variant="outline" className="border-purple-400/60 text-purple-accessible">
+              <Badge variant="outline" className="border-purple-400 text-purple-accessible font-medium">
                 <Music className="w-3 h-3 mr-1" aria-hidden="true" />
                 DE9: Transitions
               </Badge>
-              <Badge variant="outline" className="border-green-400/60 text-green-accessible">
+              <Badge variant="outline" className="border-green-400 text-green-accessible font-medium">
                 <Zap className="w-3 h-3 mr-1" aria-hidden="true" />
                 {currentLog.status}
               </Badge>
@@ -111,7 +111,7 @@ const Index = () => {
       {/* Floating Action Button */}
       <div className="fixed bottom-8 right-8">
         <Button 
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:scale-105 transition-transform duration-300 shadow-xl interactive-element"
+          className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:scale-105 transition-transform duration-300 shadow-xl interactive-element border-2 border-accessible-border"
           aria-label="Quick actions menu"
         >
           <Zap className="w-6 h-6" aria-hidden="true" />

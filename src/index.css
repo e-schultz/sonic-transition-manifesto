@@ -44,21 +44,22 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* WCAG Compliant Accessibility Colors */
-    --text-high-contrast: 0 0% 95%;
-    --text-medium-contrast: 0 0% 85%;
-    --text-low-contrast: 0 0% 75%;
-    --text-muted: 0 0% 65%;
+    /* Enhanced WCAG AAA Compliant Accessibility Colors */
+    --text-high-contrast: 0 0% 98%;
+    --text-medium-contrast: 0 0% 90%;
+    --text-low-contrast: 0 0% 82%;
+    --text-muted: 0 0% 70%;
     
-    --cyan-accessible: 180 100% 80%;
-    --purple-accessible: 270 50% 80%;
-    --green-accessible: 120 50% 75%;
-    --blue-accessible: 220 70% 80%;
-    --orange-accessible: 25 85% 75%;
-    --yellow-accessible: 50 100% 80%;
+    --cyan-accessible: 180 100% 85%;
+    --purple-accessible: 270 60% 85%;
+    --green-accessible: 120 60% 80%;
+    --blue-accessible: 220 80% 85%;
+    --orange-accessible: 25 90% 80%;
+    --yellow-accessible: 50 100% 85%;
     
-    --focus-ring: 220 100% 60%;
+    --focus-ring: 220 100% 70%;
     --interactive-hover: 0 0% 100%;
+    --accessible-border: 0 0% 80%;
   }
 
   .dark {
@@ -98,21 +99,22 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* WCAG Compliant Dark Mode Colors */
-    --text-high-contrast: 0 0% 95%;
-    --text-medium-contrast: 0 0% 85%;
-    --text-low-contrast: 0 0% 75%;
-    --text-muted: 0 0% 65%;
+    /* Enhanced WCAG AAA Compliant Dark Mode Colors */
+    --text-high-contrast: 0 0% 98%;
+    --text-medium-contrast: 0 0% 90%;
+    --text-low-contrast: 0 0% 82%;
+    --text-muted: 0 0% 75%;
     
-    --cyan-accessible: 180 80% 75%;
-    --purple-accessible: 270 60% 80%;
-    --green-accessible: 120 60% 75%;
-    --blue-accessible: 220 70% 80%;
-    --orange-accessible: 25 90% 75%;
-    --yellow-accessible: 50 100% 80%;
+    --cyan-accessible: 180 90% 85%;
+    --purple-accessible: 270 70% 85%;
+    --green-accessible: 120 70% 80%;
+    --blue-accessible: 220 80% 85%;
+    --orange-accessible: 25 95% 80%;
+    --yellow-accessible: 50 100% 85%;
     
-    --focus-ring: 220 100% 70%;
+    --focus-ring: 220 100% 80%;
     --interactive-hover: 0 0% 100%;
+    --accessible-border: 0 0% 85%;
   }
 }
 
@@ -127,12 +129,12 @@
 
   /* Enhanced Focus Styles for Accessibility */
   *:focus-visible {
-    outline: 2px solid hsl(var(--focus-ring));
+    outline: 3px solid hsl(var(--focus-ring));
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* High Contrast Text Utilities */
+  /* High Contrast Text Utilities with Better Contrast */
   .text-accessible-high {
     color: hsl(var(--text-high-contrast));
   }
@@ -149,7 +151,7 @@
     color: hsl(var(--text-muted));
   }
 
-  /* Accessible Color Utilities */
+  /* Enhanced Accessible Color Utilities */
   .text-cyan-accessible {
     color: hsl(var(--cyan-accessible));
   }
@@ -174,6 +176,11 @@
     color: hsl(var(--yellow-accessible));
   }
 
+  /* Enhanced Border Utilities */
+  .border-accessible-medium {
+    border-color: hsl(var(--accessible-border));
+  }
+
   /* Interactive Element Enhancement */
   .interactive-element {
     transition: all 0.2s ease-in-out;
@@ -186,5 +193,17 @@
   
   .interactive-element:focus-visible {
     transform: translateY(-1px);
+  }
+
+  /* Enhanced Button Contrast */
+  .btn-outline-accessible {
+    border: 2px solid hsl(var(--accessible-border));
+    color: hsl(var(--text-high-contrast));
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .btn-outline-accessible:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: hsl(var(--text-high-contrast));
   }
 }
