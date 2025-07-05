@@ -1,0 +1,7 @@
+{
+  "projectName": "sonic-transition-manifesto",
+  "subdomain": "sonic-transition-manifesto",
+  "framework": "vite",
+  "buildCommand": "npx vite build",
+  "outputDirectory": "dist"
+}
